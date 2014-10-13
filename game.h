@@ -8,21 +8,17 @@
 class Game
 {
 public:
-
     Game();
     ~Game();
     void init();
     void cleanup();
     void gameloop();
-    void triangle();
 
 private:
-
     SDL_Window* window;
     SDL_Event mainEvent;
     SDL_GLContext glContext;
     bool running;
-
 };
 
 #endif
