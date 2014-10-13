@@ -8,11 +8,13 @@
 class Game
 {
 public:
+
     Game();
     ~Game();
     void init();
     void cleanup();
     void gameloop();
+    void triangle();
 
 private:
 
