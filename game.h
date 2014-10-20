@@ -26,7 +26,7 @@ private:
     SDL_GLContext glContext;
     bool running;
     GLint shaderProgram;
-    GLuint VBO, VAO;
+    GLuint VBO , VAO , EBO;
 };
 
 #endif

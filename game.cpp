@@ -27,6 +27,7 @@ void Game::init()
     glViewport(0, 0, 1024, 768);
     std::cout << "init";
     setupShaders();
+    loadTriangle();
 
 }
 
@@ -93,27 +94,45 @@ void Game::setupShaders()
 
 void Game::render()
 {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    //glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
 
-void Game::loadTrianlge()
+void Game::loadTriangle()
 {
-    GLfloat vertices[] = {
+    /*GLfloat vertices[] = {
             -0.5f, -0.5f,	// Left (X,Y)
             0.5f, -0.5f, // Right (X,Y)
             0.0f, 0.5f  // Top (X,Y)
+    };*/
+    GLfloat vertices[] = {
+        0.5f, 0.5f,	   // Top Right
+        0.5f, -0.5f,   // Bottom Right
+        -0.5f, -0.5f,  // Bottom Left
+        -0.5f, 0.5f
     };
+
+    GLuint indices[] = {
+            0,1,3,
+            1,2,3
+    };
+
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    // Bind our Vertex Array Object first, then bind and set our buffers and pointers.
+    glGenBuffers(1, &EBO);
+
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER , EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER , sizeof(indices) , indices , GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*)0);
     glEnableVertexAttribArray(0);
