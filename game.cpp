@@ -113,7 +113,7 @@ void Game::loadTriangle()
         0.5f, 0.5f,	   // Top Right
         0.5f, -0.5f,   // Bottom Right
         -0.5f, -0.5f,  // Bottom Left
-        -0.5f, 0.5f
+        -0.5f, 0.5f    // top left
     };
 
     GLuint indices[] = {
