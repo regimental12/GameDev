@@ -3,6 +3,7 @@
 Game::Game()
 {
     running = true;
+    surface = NULL;
 }
 
 Game::~Game()
@@ -32,6 +33,7 @@ void Game::init()
     std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
     setupShaders();
     loadTriangle();
+    loadTexture("container.jpg");
 
 }
 
@@ -76,18 +78,21 @@ void Game::render()
 {
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     shader.use();
+    glBindTexture(GL_TEXTURE_2D, texture);
     glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    //glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
 
 void Game::loadTriangle()
 {
     GLfloat vertices[] = {
-            // Positions	// Colors
-            0.5f, -0.5f, 1.0f, 0.0f, 0.0f,     // Bottom Right
-            -0.5f, -0.5f, 0.0f, 1.0f, 0.0f,    // Bottom Left
-            0.0f, 0.5f, 0.0f, 0.0f, 1.0f       // Top
+            // Positions	// Colors		    // Texture Coords
+            0.5f, 0.5f,     1.0f, 0.0f, 0.0f,   1.0f, 1.0f,         // Top Right
+            0.5f, -0.5f,    0.0f, 1.0f, 0.0f,   1.0f, 0.0f,         // Bottom Right
+            -0.5f, -0.5f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,         // Bottom Left
+            -0.5f, 0.5f,    1.0f, 1.0f, 0.0f,   0.0f, 1.0f          // Top Left
     };
 
 
@@ -96,28 +101,73 @@ void Game::loadTriangle()
             1,2,3
     };
 
-
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    //glGenBuffers(1, &EBO);
+    glGenBuffers(1, &EBO);
 
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    /*glBindBuffer(GL_ELEMENT_ARRAY_BUFFER , EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER , EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER , sizeof(indices) , indices , GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*)0);
-    glEnableVertexAttribArray(0);*/
-
-    //position
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
+    // Position attribute
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)0);
     glEnableVertexAttribArray(0);
-    //colour
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(2 * sizeof(GLfloat)));
+    // Color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)(2 * sizeof(GLfloat)));
     glEnableVertexAttribArray(1);
+    // TexCoord attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)(5 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
 
     glBindVertexArray(0);
 }
+
+void Game::loadTexture(std::string path)
+{
+    surface = IMG_Load(path.c_str());
+
+    if(surface == NULL)
+    {
+        std::cout << "loading image failed :: " << IMG_GetError() << std::endl;
+    }
+
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    // Set our texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT (usually basic wrapping method)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // Set texture filtering
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, surface->w, surface->h, 0, GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    SDL_FreeSurface(surface);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
