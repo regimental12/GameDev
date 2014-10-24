@@ -6,6 +6,7 @@
 #include "GL/gl.h"
 #include "GL/glu.h"
 #include <iostream>
+#include "shader.h"
 
 
 class Game
@@ -27,6 +28,7 @@ private:
     bool running;
     GLint shaderProgram;
     GLuint VBO , VAO , EBO;
+    Shader shader;
 };
 
 #endif
