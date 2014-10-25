@@ -9,6 +9,12 @@
 #include <iostream>
 #include "shader.h"
 
+#define GLM_FORCE_RADIANS
+
+#include "glm/glm.hpp"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 
 class Game
 {
@@ -21,6 +27,7 @@ public:
     void render();
     void setupShaders();
     void loadTriangle();
+    void loadCube();
     void loadTexture(std::string path);
 
 private:
@@ -33,6 +40,7 @@ private:
     Shader shader;
     GLuint texture;
     SDL_Surface* surface;
+    int width , height , start;
 };
 
 #endif
