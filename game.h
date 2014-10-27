@@ -8,6 +8,7 @@
 #include "GL/glu.h"
 #include <iostream>
 #include "shader.h"
+#include "imageLoader.h"
 
 #define GLM_FORCE_RADIANS
 
@@ -29,6 +30,7 @@ public:
     void loadTriangle();
     void loadCube();
     void loadTexture(std::string path);
+    GLuint getTexture() { return texture; }
 
 private:
     SDL_Window* window;
@@ -38,6 +40,7 @@ private:
     GLint shaderProgram;
     GLuint VBO , VAO , EBO;
     Shader shader;
+    imageLoader iLoader;
     GLuint texture;
     SDL_Surface* surface;
     int width , height , start;
