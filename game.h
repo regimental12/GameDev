@@ -9,6 +9,8 @@
 #include <iostream>
 #include "shader.h"
 #include "imageLoader.h"
+#include "Camera.h"
+#include "Time.h"
 
 #define GLM_FORCE_RADIANS
 
@@ -44,6 +46,8 @@ private:
     GLuint texture;
     SDL_Surface* surface;
     int width , height , start;
+    Camera camera;
+    Time* time;
 };
 
 #endif
