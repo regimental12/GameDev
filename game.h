@@ -46,7 +46,7 @@ private:
     GLuint texture;
     SDL_Surface* surface;
     int width , height , start;
-    Camera camera;
+    Camera* camera;
     Time* time;
 };
 

@@ -15,22 +15,14 @@ class Camera
 public:
     Camera();
 
-    glm::vec3 camPos = glm::vec3(0.0f , 0.0f , 2.0f);
-    glm::vec3 camTarget = glm::vec3(0.0f , 0.0f , 0.0f);
-    glm::vec3 camDirection = camPos - camTarget;
-    glm::vec3 up = glm::vec3(0.0f , 1.0f , 0.0f);
-    glm::vec3 camRight = glm::cross(up, camDirection);
-    glm::vec3 camUp = glm::cross(camDirection , camRight);
-    glm::mat4 view;
-
-    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 2.0f);
-    glm::vec3 cameraDir = glm::vec3(0.0f, 0.0f, 1.0f);
+    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+    glm::vec3 cameraDir = glm::vec3(0.0f, 0.0f, -1.0f);
     glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    GLfloat cameraSpeed = 0.05f;
+    GLfloat xPos , yPos , yaw , pitch;
+    GLfloat cameraSpeed = 0.5f;
 
-
-
+    void handleMovement(SDL_Event &e);
 };
 
 #endif

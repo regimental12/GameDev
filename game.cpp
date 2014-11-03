@@ -7,6 +7,7 @@ Game::Game()
     running = true;
     surface = NULL;
     time = new Time();
+    camera = new Camera();
 }
 
 Game::~Game()
@@ -38,11 +39,7 @@ void Game::init()
     std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 
     setupShaders();
-    //loadTriangle();
     loadCube();
-
-    //loadTexture("container.jpg");
-
     texture = iLoader.loadTexture("container.jpg");
     width = iLoader.getwidth();
     height = iLoader.getheight();
@@ -59,8 +56,6 @@ void Game::gameloop()
 {
     while (running)
     {
-        //start = SDL_GetTicks();
-
         while (SDL_PollEvent(&mainEvent))
         {
             switch (mainEvent.type)
@@ -68,27 +63,17 @@ void Game::gameloop()
                 case SDL_QUIT:
                     running = false;
                     break;
-                case SDLK_w:
-                    camera.cameraPos += camera.cameraSpeed * camera.camDirection;
-                    break;
-                case SDLK_s:
-                    camera.cameraPos -= camera.cameraSpeed * camera.camDirection;
-                    break;
-
             }
         }
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        camera->handleMovement(mainEvent);
+
         render();
 
         SDL_GL_SwapWindow(window);
-        time->CapFrameRate();
-        /*if (1000 / 30 > (SDL_GetTicks() - start))
-        {
-            SDL_Delay(1000 / 30 - (SDL_GetTicks() - start));
-        }*/
     }
 }
 
@@ -118,31 +103,17 @@ void Game::render()
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(shader.program, "ourTexture1"), 0);
 
-    /*glm::mat4 model;
-    glm::mat4 view;
-    glm::mat4 projection;
-    model = glm::rotate(model, SDL_GetTicks()/(1000/30) * 50.0f, glm::vec3(0.5f, 1.0f, 0.0f));
-    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-    projection = glm::perspective(45.0f, (float)width/(float)height, 0.1f, 1000.0f);*/
-
-    //time->DeltaTime();
-    GLfloat radius = 10.0f;
-    GLfloat cameraZ = cos( time->lastFrame ) * radius ;
-    GLfloat cameraX = sin(  time->lastFrame) * radius ;
-
     // Create camera transformation
     glm::mat4 view;
-    view = glm::lookAt(glm::vec3(cameraX , 0.0f, cameraZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    view = glm::lookAt(camera->cameraPos , camera->cameraPos + camera->cameraDir , camera->cameraUp);
     glm::mat4 projection;
     projection = glm::perspective(45.0f, (float)1024/(float)768, 0.1f, 1000.0f);
-
     // Get their uniform location
     GLint modelLoc = glGetUniformLocation(shader.program, "model");
     GLint viewLoc = glGetUniformLocation(shader.program, "view");
     GLint projLoc = glGetUniformLocation(shader.program, "projection");
 
     // Pass them to the shaders
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
@@ -151,54 +122,13 @@ void Game::render()
     {
         glm::mat4 model;
         model = glm::translate(model, cubePositions[i]);
-        model = glm::rotate(model, time->deltaTime * 50.0f, glm::vec3(0.5f, 1.0f, 0.0f));
+        model = glm::rotate(model, time->maxFPS * 50.0f, glm::vec3(0.5f, 1.0f, 0.0f));
         GLfloat angle = 20.0f * i;
         model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
-    glBindVertexArray(0);
-}
-
-void Game::loadTriangle()
-{
-    GLfloat vertices[] = {
-            // Positions	// Colors		    // Texture Coords
-            0.5f, 0.5f,     1.0f, 0.0f, 0.0f,   1.0f, 1.0f,         // Top Right
-            0.5f, -0.5f,    0.0f, 1.0f, 0.0f,   1.0f, 0.0f,         // Bottom Right
-            -0.5f, -0.5f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,         // Bottom Left
-            -0.5f, 0.5f,    1.0f, 1.0f, 0.0f,   0.0f, 1.0f          // Top Left
-    };
-
-
-    GLuint indices[] = {
-            0,1,3,
-            1,2,3
-    };
-
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER , EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER , sizeof(indices) , indices , GL_STATIC_DRAW);
-
-    // Position attribute
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)0);
-    glEnableVertexAttribArray(0);
-    // Color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)(2 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(1);
-    // TexCoord attribute
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (GLvoid*)(5 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(2);
-
     glBindVertexArray(0);
 }
 
@@ -265,57 +195,3 @@ void Game::loadCube()
 
     glBindVertexArray(0);
 }
-
-void Game::loadTexture(std::string path)
-{
-    surface = IMG_Load(path.c_str());
-
-    if(surface == NULL)
-    {
-        std::cout << "loading image failed :: " << IMG_GetError() << std::endl;
-    }
-    width = surface->w;
-    height = surface->h;
-    //glActiveTexture(GL_TEXTURE0);
-
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-    // Set our texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT (usually basic wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // Set texture filtering
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, surface->w, surface->h, 0, GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
-
-    glGenerateMipmap(GL_TEXTURE_2D);
-    SDL_FreeSurface(surface);
-    glBindTexture(GL_TEXTURE_2D, 0);
-
-    //return texture;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

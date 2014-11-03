@@ -8,13 +8,14 @@ public:
     Time();
     ~Time();
 
-    void DeltaTime();
+    GLfloat DeltaTime();
     void CapFrameRate();
 
     GLfloat deltaTime;
     GLfloat lastFrame;
 
     GLfloat currentFrame;
+    int maxFPS;
 
 
 };
