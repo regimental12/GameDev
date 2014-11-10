@@ -11,18 +11,16 @@ Time::Time()
 Time::~Time()
 {
 }
-
-GLfloat Time::DeltaTime()
+void Time::DeltaTime()
 {
     currentFrame = SDL_GetTicks();
-    deltaTime = (currentFrame - lastFrame) / 1000.0f ;
+    deltaTime = (currentFrame - lastFrame) ;
     lastFrame = currentFrame;
-    return deltaTime;
 }
 
 void Time::CapFrameRate()
 {
-    if(maxFPS > (deltaTime - lastFrame) )
+    if(maxFPS > (deltaTime - lastFrame))
     {
         SDL_Delay(maxFPS);
     }

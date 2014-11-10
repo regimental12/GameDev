@@ -1,3 +1,7 @@
+#ifndef TIME_H
+#define TIME_H
+
+
 #include "SDL2/SDL.h"
 #include "GL/glew.h"
 #include "GL/glu.h"
@@ -8,7 +12,7 @@ public:
     Time();
     ~Time();
 
-    GLfloat DeltaTime();
+    void DeltaTime();
     void CapFrameRate();
 
     GLfloat deltaTime;
@@ -16,6 +20,6 @@ public:
 
     GLfloat currentFrame;
     int maxFPS;
-
-
 };
+
+#endif

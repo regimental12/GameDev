@@ -38,7 +38,7 @@ void Game::init()
     std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
     std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 
-    setupShaders();
+    shader.loadShader("Vertex.vert", "Fragment.frag");
     loadCube();
     texture = iLoader.loadTexture("container.jpg");
     width = iLoader.getwidth();
@@ -56,6 +56,7 @@ void Game::gameloop()
 {
     while (running)
     {
+        time->DeltaTime();
         while (SDL_PollEvent(&mainEvent))
         {
             switch (mainEvent.type)
@@ -69,17 +70,15 @@ void Game::gameloop()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        camera->handleMovement(mainEvent);
+        camera->cameraSpeed * time->deltaTime;
+        camera->handleMovement(&mainEvent);
+        camera->update();
 
         render();
+        time->CapFrameRate();
 
         SDL_GL_SwapWindow(window);
     }
-}
-
-void Game::setupShaders()
-{
-    shader.loadShader("Vertex.vert" , "Fragment.frag");
 }
 
 void Game::render()
@@ -96,26 +95,20 @@ void Game::render()
             glm::vec3(1.5f, 0.2f, -1.5f),
             glm::vec3(-1.3f, 1.0f, -1.5f)
     };
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     shader.use();
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(shader.program, "ourTexture1"), 0);
 
-    // Create camera transformation
-    glm::mat4 view;
-    view = glm::lookAt(camera->cameraPos , camera->cameraPos + camera->cameraDir , camera->cameraUp);
-    glm::mat4 projection;
-    projection = glm::perspective(45.0f, (float)1024/(float)768, 0.1f, 1000.0f);
     // Get their uniform location
     GLint modelLoc = glGetUniformLocation(shader.program, "model");
     GLint viewLoc = glGetUniformLocation(shader.program, "view");
     GLint projLoc = glGetUniformLocation(shader.program, "projection");
 
     // Pass them to the shaders
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera->view));
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera->projection));
 
     glBindVertexArray(VAO);
     for(GLuint i = 0; i < 10; i++)
