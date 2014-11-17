@@ -4,8 +4,10 @@ Camera::Camera()
 {
     xPos = 1024/2;
     yPos = 768/2;
-    yaw = -90.0f;
+    yaw = 90.0f;
     pitch = 0.0f;
+    xOffSet = 0;
+    yOffSet = 0;
 
     cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 }
@@ -49,43 +51,49 @@ void Camera::handleMovement(SDL_Event *e)
                     break;
             }
         }
-
-
-
-    /*GLfloat xoffset = xpos - lastX;
-    GLfloat yoffset = lastY - ypos; // Reversed since y-coordinates go from bottom to left
-    lastX = xpos;
-    lastY = ypos;*/
-
-   /* GLfloat sensitivity = 0.05f;
-    xoffset *= sensitivity;
-    yoffset *= sensitivity;*/
-
-
+		    //SDL_MOUSEMOTION:
+		    if(e->type == SDL_MOUSEMOTION)
+		    {
+		      cameraDir.x += (e->motion.xrel * 0.01);
+		      cameraDir.y += (e->motion.yrel * 0.01);
+		    }
+        
+        /*if(e->type == SDL_MOUSEMOTION)
+	{
+	  SDL_MouseMotionEvent mouse;
+	  SDL_GetMouseState(&xPos , &yPos);
+	  
+	  GLfloat sens = 0.1f;
+	  
+	  xPos * sens;
+	  yPos * sens;
+	  
+	  /*if(xPos > 90)
+	  {
+	    xPos = 90;
+	  }
+	  if(xPos < -90)
+	  {
+	    xPos = -90;
+	  }
+	  if(yPos > 90)
+	  {
+	    yPos = 90;
+	  }
+	  if(yPos < -90)
+	  {
+	    yPos = -90;
+	  }
+	  cameraDir.x = cos(xPos);
+	  cameraDir.y = sin(yPos);
+	}*/
 }
 
 
 void Camera::update()
 {
     view = glm::lookAt(cameraPos , cameraPos + cameraDir , cameraUp);
-    projection = glm::perspective(45.0f, (float)1024/(float)768, 0.1f, 1000.0f);
-
-    SDL_MouseMotionEvent mouse;
-
-    yaw = mouse.x  * 0.5f;
-    pitch = mouse.y * 0.5f ;
-
-    // Make sure that when pitch is out of bounds, screen doesn't get flipped
-    if(pitch > 89.0f)
-        pitch = 89.0f;
-    if(pitch < -89.0f)
-        pitch = -89.0f;
-
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraDir = front;
+    projection = glm::perspective(45.0f, (float)1024/(float)768, 0.1f, 1000.0f);    
 }
 
 

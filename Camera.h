@@ -5,6 +5,7 @@
 #include "GL/glew.h"
 #include "GL/glu.h"
 #include "Time.h"
+#include <iostream>
 
 #define GLM_FORCE_RADIANS
 
@@ -21,7 +22,9 @@ public:
     glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
     GLfloat yaw , pitch;
-    int xPos , yPos;
+    int xPos;
+    int yPos;
+    GLfloat xOffSet , yOffSet;
     GLfloat cameraSpeed = 1.0f;
 
     void handleMovement(SDL_Event *e);
