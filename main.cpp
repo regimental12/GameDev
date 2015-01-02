@@ -1,6 +1,12 @@
-#include <iostream>
+#include "game.h"
 
-int main(int argc, char **argv) {
-    std::cout << "Hello, world!" << std::endl;
+Game* game = new Game();
+
+int main()
+{
+    game->init();
+    game->gameloop();
+    game->cleanup();
     return 0;
 }
+
