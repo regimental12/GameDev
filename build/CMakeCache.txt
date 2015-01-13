@@ -205,13 +205,13 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
 
 //Value Computed by CMake
-VoxelGame_BINARY_DIR:STATIC=build
+VoxelGame_BINARY_DIR:STATIC=/home/richard/projects/Ci224/build
 
 //Dependencies for target
 VoxelGame_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
-VoxelGame_SOURCE_DIR:STATIC=Ci224
+VoxelGame_SOURCE_DIR:STATIC=/home/richard/projects/Ci224
 
 //Path to a file.
 X11_ICE_INCLUDE_PATH:PATH=/usr/include
@@ -408,7 +408,7 @@ CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
 CMAKE_BUILD_TOOL:INTERNAL=/usr/bin/make
 //This is the directory where this CMakeCache.txt was created
-CMAKE_CACHEFILE_DIR:INTERNAL=build
+CMAKE_CACHEFILE_DIR:INTERNAL=/home/richard/projects/Ci224/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
@@ -477,7 +477,7 @@ CMAKE_HAVE_REMOVE:INTERNAL=1
 CMAKE_HAVE_SHMAT:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=Ci224
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/richard/projects/Ci224
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //Have library ICE
