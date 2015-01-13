@@ -1,0 +1,16 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$class_game.html#a6f3a33940524b6ba9d83f627ccb14bbf" title="Game::init" alt="" coords="124,132,207,159"/>
+<area shape="rect" id="node8" href="$class_game.html#aeae97cec35573c668d3f222a58f53255" title="Game::gameloop" alt="" coords="105,335,226,361"/>
+<area shape="rect" id="node15" href="$class_game.html#a961f632fbe7f4ba08d23fe9edc7711be" title="Game::cleanup" alt="" coords="110,385,221,412"/>
+<area shape="rect" id="node3" href="$class_shader.html#a962e502d2a94b9071a20ab3c7a096104" title="Shader::loadShader" alt="" coords="295,5,431,32"/>
+<area shape="rect" id="node4" href="$class_game.html#ab5ae2734e96b7913dd131208065b4b5a" title="Game::loadCube" alt="" coords="303,56,423,83"/>
+<area shape="rect" id="node5" href="$classimage_loader.html#a15eb99f98ce36061e29d644803f4dce9" title="imageLoader::loadTexture" alt="" coords="277,107,449,133"/>
+<area shape="rect" id="node6" href="$classimage_loader.html#a0cd6e95e0d7aafeeb1fb6b8589c6579b" title="imageLoader::getwidth" alt="" coords="286,157,439,184"/>
+<area shape="rect" id="node7" href="$classimage_loader.html#a710984dbe3f87efd871e3ce244115ce7" title="imageLoader::getheight" alt="" coords="284,208,441,235"/>
+<area shape="rect" id="node9" href="$class_time.html#a385b4c0869ed969b266535ae835d135d" title="Time::DeltaTime" alt="" coords="303,259,422,285"/>
+<area shape="rect" id="node10" href="$class_camera.html#a6ca725d7a02cc423d220a849140fc0aa" title="Camera::handleMovement" alt="" coords="275,309,450,336"/>
+<area shape="rect" id="node11" href="$class_camera.html#a42cda7239981a5618660d04bd5893556" title="Camera::update" alt="" coords="305,360,420,387"/>
+<area shape="rect" id="node12" href="$class_game.html#a15ddd769261d923827a3cdf41499c843" title="Game::render" alt="" coords="312,411,413,437"/>
+<area shape="rect" id="node14" href="$class_time.html#a8ccf48d1b779c21143c0a96c2574514e" title="Time::CapFrameRate" alt="" coords="289,461,437,488"/>
+<area shape="rect" id="node13" href="$class_shader.html#a870fa9f13d69e558815d6fd351a469dc" title="Shader::use" alt="" coords="499,411,591,437"/>
+</map>

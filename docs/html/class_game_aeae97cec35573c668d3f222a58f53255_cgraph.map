@@ -1,0 +1,8 @@
+<map id="Game::gameloop" name="Game::gameloop">
+<area shape="rect" id="node2" href="$class_time.html#a385b4c0869ed969b266535ae835d135d" title="Time::DeltaTime" alt="" coords="205,5,323,32"/>
+<area shape="rect" id="node3" href="$class_camera.html#a6ca725d7a02cc423d220a849140fc0aa" title="Camera::handleMovement" alt="" coords="177,56,351,83"/>
+<area shape="rect" id="node4" href="$class_camera.html#a42cda7239981a5618660d04bd5893556" title="Camera::update" alt="" coords="207,107,321,133"/>
+<area shape="rect" id="node5" href="$class_game.html#a15ddd769261d923827a3cdf41499c843" title="Game::render" alt="" coords="213,157,315,184"/>
+<area shape="rect" id="node7" href="$class_time.html#a8ccf48d1b779c21143c0a96c2574514e" title="Time::CapFrameRate" alt="" coords="190,208,338,235"/>
+<area shape="rect" id="node6" href="$class_shader.html#a870fa9f13d69e558815d6fd351a469dc" title="Shader::use" alt="" coords="401,157,493,184"/>
+</map>

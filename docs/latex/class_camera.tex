@@ -1,0 +1,205 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+
+
+Collaboration diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{class_camera__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\item 
+void \hyperlink{class_camera_a6ca725d7a02cc423d220a849140fc0aa}{handle\+Movement} (S\+D\+L\+\_\+\+Event $\ast$e)
+\item 
+void \hyperlink{class_camera_a42cda7239981a5618660d04bd5893556}{update} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{class_camera_a424bcf971a87506ba6770f2c5c1073f0}{camera\+Pos}
+\item 
+glm\+::vec3 \hyperlink{class_camera_ad641b25d477900ac4f3cd859ac14e8f7}{camera\+Dir} = glm\+::vec3(0.\+0f, 0.\+0f, -\/1.\+0f)
+\item 
+glm\+::vec3 \hyperlink{class_camera_a517042b127746997f9472d51bbae2610}{camera\+Up} = glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f)
+\item 
+int \hyperlink{class_camera_a76f82934e9d29f80a6067b900d750b55}{x\+Pos}
+\item 
+int \hyperlink{class_camera_ae73c8dc0602e7849e7ec730f9acc1954}{y\+Pos}
+\item 
+G\+Lfloat \hyperlink{class_camera_a0c41085cad802bae1026706d23688034}{x\+Off\+Set}
+\item 
+G\+Lfloat \hyperlink{class_camera_a6d394f402515409bac177801ab11619b}{y\+Off\+Set}
+\item 
+G\+Lfloat \hyperlink{class_camera_a8f67cd3183810d8d675d38cc62af966a}{camera\+Speed} = 1.\+0f
+\item 
+glm\+::mat4 \hyperlink{class_camera_add93fedd6b9a6a6e2c784aeda624de83}{view}
+\item 
+glm\+::mat4 \hyperlink{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}{projection}
+\item 
+\hyperlink{class_time}{Time} $\ast$ \hyperlink{class_camera_a5944842935bf511fb1720f50f0f426da}{time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Camera.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}{}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_camera_a01f94c3543f56ede7af49dc778f19331}
+Initialise Variables; 
+
+Definition at line 7 of file Camera.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_a6ca725d7a02cc423d220a849140fc0aa}{}\index{Camera@{Camera}!handle\+Movement@{handle\+Movement}}
+\index{handle\+Movement@{handle\+Movement}!Camera@{Camera}}
+\subsubsection[{handle\+Movement}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::handle\+Movement (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)}\label{class_camera_a6ca725d7a02cc423d220a849140fc0aa}
+Handle input form passed in main\+Event struct. \begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]movement does not work as intended. camera will move for a certain amount then stop. also camera suffers from gimble lock. need to move over to quaternions in the future. \end{DoxyRefDesc}
+used for debug
+
+Definition at line 24 of file Camera.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a6ca725d7a02cc423d220a849140fc0aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_camera_a42cda7239981a5618660d04bd5893556}{}\index{Camera@{Camera}!update@{update}}
+\index{update@{update}!Camera@{Camera}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_camera_a42cda7239981a5618660d04bd5893556}
+
+
+Definition at line 89 of file Camera.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a42cda7239981a5618660d04bd5893556_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_camera_ad641b25d477900ac4f3cd859ac14e8f7}{}\index{Camera@{Camera}!camera\+Dir@{camera\+Dir}}
+\index{camera\+Dir@{camera\+Dir}!Camera@{Camera}}
+\subsubsection[{camera\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::camera\+Dir = glm\+::vec3(0.\+0f, 0.\+0f, -\/1.\+0f)}\label{class_camera_ad641b25d477900ac4f3cd859ac14e8f7}
+
+
+Definition at line 24 of file Camera.\+h.
+
+\hypertarget{class_camera_a424bcf971a87506ba6770f2c5c1073f0}{}\index{Camera@{Camera}!camera\+Pos@{camera\+Pos}}
+\index{camera\+Pos@{camera\+Pos}!Camera@{Camera}}
+\subsubsection[{camera\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::camera\+Pos}\label{class_camera_a424bcf971a87506ba6770f2c5c1073f0}
+
+
+Definition at line 23 of file Camera.\+h.
+
+\hypertarget{class_camera_a8f67cd3183810d8d675d38cc62af966a}{}\index{Camera@{Camera}!camera\+Speed@{camera\+Speed}}
+\index{camera\+Speed@{camera\+Speed}!Camera@{Camera}}
+\subsubsection[{camera\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Camera\+::camera\+Speed = 1.\+0f}\label{class_camera_a8f67cd3183810d8d675d38cc62af966a}
+
+
+Definition at line 30 of file Camera.\+h.
+
+\hypertarget{class_camera_a517042b127746997f9472d51bbae2610}{}\index{Camera@{Camera}!camera\+Up@{camera\+Up}}
+\index{camera\+Up@{camera\+Up}!Camera@{Camera}}
+\subsubsection[{camera\+Up}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::camera\+Up = glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f)}\label{class_camera_a517042b127746997f9472d51bbae2610}
+
+
+Definition at line 25 of file Camera.\+h.
+
+\hypertarget{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}{}\index{Camera@{Camera}!projection@{projection}}
+\index{projection@{projection}!Camera@{Camera}}
+\subsubsection[{projection}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Camera\+::projection}\label{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}
+
+
+Definition at line 36 of file Camera.\+h.
+
+\hypertarget{class_camera_a5944842935bf511fb1720f50f0f426da}{}\index{Camera@{Camera}!time@{time}}
+\index{time@{time}!Camera@{Camera}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time}$\ast$ Camera\+::time}\label{class_camera_a5944842935bf511fb1720f50f0f426da}
+
+
+Definition at line 37 of file Camera.\+h.
+
+\hypertarget{class_camera_add93fedd6b9a6a6e2c784aeda624de83}{}\index{Camera@{Camera}!view@{view}}
+\index{view@{view}!Camera@{Camera}}
+\subsubsection[{view}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Camera\+::view}\label{class_camera_add93fedd6b9a6a6e2c784aeda624de83}
+
+
+Definition at line 35 of file Camera.\+h.
+
+\hypertarget{class_camera_a0c41085cad802bae1026706d23688034}{}\index{Camera@{Camera}!x\+Off\+Set@{x\+Off\+Set}}
+\index{x\+Off\+Set@{x\+Off\+Set}!Camera@{Camera}}
+\subsubsection[{x\+Off\+Set}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Camera\+::x\+Off\+Set}\label{class_camera_a0c41085cad802bae1026706d23688034}
+
+
+Definition at line 29 of file Camera.\+h.
+
+\hypertarget{class_camera_a76f82934e9d29f80a6067b900d750b55}{}\index{Camera@{Camera}!x\+Pos@{x\+Pos}}
+\index{x\+Pos@{x\+Pos}!Camera@{Camera}}
+\subsubsection[{x\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Camera\+::x\+Pos}\label{class_camera_a76f82934e9d29f80a6067b900d750b55}
+
+
+Definition at line 27 of file Camera.\+h.
+
+\hypertarget{class_camera_a6d394f402515409bac177801ab11619b}{}\index{Camera@{Camera}!y\+Off\+Set@{y\+Off\+Set}}
+\index{y\+Off\+Set@{y\+Off\+Set}!Camera@{Camera}}
+\subsubsection[{y\+Off\+Set}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Camera\+::y\+Off\+Set}\label{class_camera_a6d394f402515409bac177801ab11619b}
+
+
+Definition at line 29 of file Camera.\+h.
+
+\hypertarget{class_camera_ae73c8dc0602e7849e7ec730f9acc1954}{}\index{Camera@{Camera}!y\+Pos@{y\+Pos}}
+\index{y\+Pos@{y\+Pos}!Camera@{Camera}}
+\subsubsection[{y\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Camera\+::y\+Pos}\label{class_camera_ae73c8dc0602e7849e7ec730f9acc1954}
+
+
+Definition at line 28 of file Camera.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_camera_8h}{Camera.\+h}\item 
+\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

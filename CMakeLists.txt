@@ -1,5 +1,5 @@
-project(ci224)
+cmake_minimum_required(VERSION 2.8)
 
-add_executable(ci224 main.cpp)
+project("VoxelGame")
 
-install(TARGETS ci224 RUNTIME DESTINATION bin)
+add_subdirectory (src)

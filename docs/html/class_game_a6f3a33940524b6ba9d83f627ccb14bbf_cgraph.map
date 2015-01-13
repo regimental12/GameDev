@@ -1,0 +1,7 @@
+<map id="Game::init" name="Game::init">
+<area shape="rect" id="node2" href="$class_shader.html#a962e502d2a94b9071a20ab3c7a096104" title="Shader::loadShader" alt="" coords="155,5,291,32"/>
+<area shape="rect" id="node3" href="$class_game.html#ab5ae2734e96b7913dd131208065b4b5a" title="Game::loadCube" alt="" coords="163,56,283,83"/>
+<area shape="rect" id="node4" href="$classimage_loader.html#a15eb99f98ce36061e29d644803f4dce9" title="imageLoader::loadTexture" alt="" coords="137,107,309,133"/>
+<area shape="rect" id="node5" href="$classimage_loader.html#a0cd6e95e0d7aafeeb1fb6b8589c6579b" title="imageLoader::getwidth" alt="" coords="146,157,299,184"/>
+<area shape="rect" id="node6" href="$classimage_loader.html#a710984dbe3f87efd871e3ce244115ce7" title="imageLoader::getheight" alt="" coords="144,208,301,235"/>
+</map>

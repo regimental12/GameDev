@@ -1,0 +1,218 @@
+\hypertarget{class_game}{}\section{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game} ()
+\item 
+\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game} ()
+\item 
+void \hyperlink{class_game_a6f3a33940524b6ba9d83f627ccb14bbf}{init} ()
+\item 
+void \hyperlink{class_game_a961f632fbe7f4ba08d23fe9edc7711be}{cleanup} ()
+\item 
+void \hyperlink{class_game_aeae97cec35573c668d3f222a58f53255}{gameloop} ()
+\item 
+void \hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render} ()
+\item 
+void \hyperlink{class_game_af432b82a96963dd1ad8214625f3a4438}{setup\+Shaders} ()
+\item 
+void \hyperlink{class_game_ab5ae2734e96b7913dd131208065b4b5a}{load\+Cube} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file game.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}{}\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_ad59df6562a58a614fda24622d3715b65}
+Initialise variables and create needed objects 
+
+Definition at line 7 of file game.\+cpp.
+
+\hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}{}\index{Game@{Game}!````~Game@{$\sim$\+Game}}
+\index{````~Game@{$\sim$\+Game}!Game@{Game}}
+\subsubsection[{$\sim$\+Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::$\sim$\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}
+
+
+Definition at line 15 of file game.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_a961f632fbe7f4ba08d23fe9edc7711be}{}\index{Game@{Game}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Game@{Game}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_a961f632fbe7f4ba08d23fe9edc7711be}
+Delete open\+G\+L context and cleanup S\+D\+L 
+
+Definition at line 65 of file game.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_game_a961f632fbe7f4ba08d23fe9edc7711be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_aeae97cec35573c668d3f222a58f53255}{}\index{Game@{Game}!gameloop@{gameloop}}
+\index{gameloop@{gameloop}!Game@{Game}}
+\subsubsection[{gameloop}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::gameloop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_aeae97cec35573c668d3f222a58f53255}
+Main game loop 
+
+Definition at line 75 of file game.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aeae97cec35573c668d3f222a58f53255_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_game_aeae97cec35573c668d3f222a58f53255_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a6f3a33940524b6ba9d83f627ccb14bbf}{}\index{Game@{Game}!init@{init}}
+\index{init@{init}!Game@{Game}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_a6f3a33940524b6ba9d83f627ccb14bbf}
+Intialise S\+D\+L and create open\+G\+L context. load, compile and linking of shaders. Image loading also done. 
+
+Definition at line 25 of file game.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_game_a6f3a33940524b6ba9d83f627ccb14bbf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class_game_a6f3a33940524b6ba9d83f627ccb14bbf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_ab5ae2734e96b7913dd131208065b4b5a}{}\index{Game@{Game}!load\+Cube@{load\+Cube}}
+\index{load\+Cube@{load\+Cube}!Game@{Game}}
+\subsubsection[{load\+Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::load\+Cube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_ab5ae2734e96b7913dd131208065b4b5a}
+Function to load and pass vertices to the Gpu 
+
+Definition at line 192 of file game.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_game_ab5ae2734e96b7913dd131208065b4b5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a15ddd769261d923827a3cdf41499c843}{}\index{Game@{Game}!render@{render}}
+\index{render@{render}!Game@{Game}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_a15ddd769261d923827a3cdf41499c843}
+Render function all drawing code currently in here create and fill two 3 dimensional arrays.
+
+Loop through both arrays and render.
+
+Definition at line 108 of file game.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_game_a15ddd769261d923827a3cdf41499c843_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a15ddd769261d923827a3cdf41499c843_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_af432b82a96963dd1ad8214625f3a4438}{}\index{Game@{Game}!setup\+Shaders@{setup\+Shaders}}
+\index{setup\+Shaders@{setup\+Shaders}!Game@{Game}}
+\subsubsection[{setup\+Shaders}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::setup\+Shaders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_af432b82a96963dd1ad8214625f3a4438}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{game_8h}{game.\+h}\item 
+\hyperlink{game_8cpp}{game.\+cpp}\end{DoxyCompactItemize}

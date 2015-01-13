@@ -1,0 +1,146 @@
+\hypertarget{class_time}{}\section{Time Class Reference}
+\label{class_time}\index{Time@{Time}}
+
+
+{\ttfamily \#include $<$Time.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_time_a4245e409c7347d1d671858962c2ca3b5}{Time} ()
+\item 
+\hyperlink{class_time_a1e92dbe963fa3cdd6bea207680f5f6d1}{$\sim$\+Time} ()
+\item 
+void \hyperlink{class_time_a385b4c0869ed969b266535ae835d135d}{Delta\+Time} ()
+\item 
+void \hyperlink{class_time_a8ccf48d1b779c21143c0a96c2574514e}{Cap\+Frame\+Rate} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Lfloat \hyperlink{class_time_a7dd93631e77477e08954476b0f56f013}{delta\+Time}
+\item 
+G\+Lfloat \hyperlink{class_time_adda8e3dcf090474f66b60ba354843270}{last\+Frame}
+\item 
+G\+Lfloat \hyperlink{class_time_a8f870e4dd1a743941cd40c80c3dc86e0}{current\+Frame}
+\item 
+int \hyperlink{class_time_a1ea63396edff67d5069ab9dd2e8f3c44}{max\+F\+P\+S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to limit and control frame rate / camera movement speed, or aleast atempt to. Never quite got the {\ttfamily Deltatime()} function to work correctly. 
+
+Definition at line 14 of file Time.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_time_a4245e409c7347d1d671858962c2ca3b5}{}\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\subsubsection[{Time}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_time_a4245e409c7347d1d671858962c2ca3b5}
+
+
+Definition at line 3 of file Time.\+cpp.
+
+\hypertarget{class_time_a1e92dbe963fa3cdd6bea207680f5f6d1}{}\index{Time@{Time}!````~Time@{$\sim$\+Time}}
+\index{````~Time@{$\sim$\+Time}!Time@{Time}}
+\subsubsection[{$\sim$\+Time}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::$\sim$\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_time_a1e92dbe963fa3cdd6bea207680f5f6d1}
+
+
+Definition at line 11 of file Time.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_time_a8ccf48d1b779c21143c0a96c2574514e}{}\index{Time@{Time}!Cap\+Frame\+Rate@{Cap\+Frame\+Rate}}
+\index{Cap\+Frame\+Rate@{Cap\+Frame\+Rate}!Time@{Time}}
+\subsubsection[{Cap\+Frame\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}void Time\+::\+Cap\+Frame\+Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_time_a8ccf48d1b779c21143c0a96c2574514e}
+Basic frame rate cap. 
+
+Definition at line 26 of file Time.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_time_a8ccf48d1b779c21143c0a96c2574514e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_time_a385b4c0869ed969b266535ae835d135d}{}\index{Time@{Time}!Delta\+Time@{Delta\+Time}}
+\index{Delta\+Time@{Delta\+Time}!Time@{Time}}
+\subsubsection[{Delta\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Time\+::\+Delta\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_time_a385b4c0869ed969b266535ae835d135d}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]Does not wotk as expected. Wanted a function that would act like Unity3ds Time.\+deltatime \end{DoxyRefDesc}
+
+
+Definition at line 17 of file Time.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_time_a385b4c0869ed969b266535ae835d135d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_time_a8f870e4dd1a743941cd40c80c3dc86e0}{}\index{Time@{Time}!current\+Frame@{current\+Frame}}
+\index{current\+Frame@{current\+Frame}!Time@{Time}}
+\subsubsection[{current\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Time\+::current\+Frame}\label{class_time_a8f870e4dd1a743941cd40c80c3dc86e0}
+
+
+Definition at line 26 of file Time.\+h.
+
+\hypertarget{class_time_a7dd93631e77477e08954476b0f56f013}{}\index{Time@{Time}!delta\+Time@{delta\+Time}}
+\index{delta\+Time@{delta\+Time}!Time@{Time}}
+\subsubsection[{delta\+Time}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Time\+::delta\+Time}\label{class_time_a7dd93631e77477e08954476b0f56f013}
+
+
+Definition at line 23 of file Time.\+h.
+
+\hypertarget{class_time_adda8e3dcf090474f66b60ba354843270}{}\index{Time@{Time}!last\+Frame@{last\+Frame}}
+\index{last\+Frame@{last\+Frame}!Time@{Time}}
+\subsubsection[{last\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lfloat Time\+::last\+Frame}\label{class_time_adda8e3dcf090474f66b60ba354843270}
+
+
+Definition at line 24 of file Time.\+h.
+
+\hypertarget{class_time_a1ea63396edff67d5069ab9dd2e8f3c44}{}\index{Time@{Time}!max\+F\+P\+S@{max\+F\+P\+S}}
+\index{max\+F\+P\+S@{max\+F\+P\+S}!Time@{Time}}
+\subsubsection[{max\+F\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}int Time\+::max\+F\+P\+S}\label{class_time_a1ea63396edff67d5069ab9dd2e8f3c44}
+
+
+Definition at line 27 of file Time.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_time_8h}{Time.\+h}\item 
+\hyperlink{_time_8cpp}{Time.\+cpp}\end{DoxyCompactItemize}
