@@ -5,11 +5,11 @@ add_executable(VoxelGame main.cpp Camera.cpp game.cpp imageLoader.cpp shader.cpp
 
 INCLUDE(FindPkgConfig)
 
-find_package(OpenGL REQUIRED)
-find_package(GLEW REQUIRED)
+#find_package(OpenGL REQUIRED)
+#find_package(GLEW REQUIRED)
 
-PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
-PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
+#PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+#PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS} )
 
