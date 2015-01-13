@@ -41,7 +41,7 @@ EQUALS = =
 # The program to use to edit the cache.
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
-# The top-level source directory on which CMake was run. 
+# The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/richard/projects/Ci224
 
 # The top-level build directory on which CMake was run.
@@ -70,11 +70,11 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# The main all target ./home/richard/projects/ .
+# The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/richard/projects/Ci224/build/CMakeFiles /home/richard/projects/Ci224/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start Ci224/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/richard/projects/Ci224/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

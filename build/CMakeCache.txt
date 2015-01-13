@@ -184,7 +184,7 @@ GLEW_INCLUDE_DIR:PATH=/usr/include
 GLEW_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLEW.so
 
 //Single output directory for building all libraries.
-LIBRARY_OUTPUT_PATH:PATH=
+LIBRARY_OUTPUT_PATH:PATH=Ci224/build
 
 //Path to a file.
 OPENGL_INCLUDE_DIR:PATH=/usr/include
