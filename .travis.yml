@@ -11,7 +11,8 @@ install:
   - sudo apt-get install -q -y libsdl2-dev
   - sudo apt-get install -q libglm-dev
   - sudo apt-get install -q libglew-dev
-  - sudo apt-get install -q -y libsdl2-image-dev	
+  - sudo apt-get install -q -y libsdl2-image-dev
+  - ls	
 
 script:
   - make
