@@ -1,1 +1,1 @@
-/home/richard/projects/Ci224/CMakeFiles/VoxelGame.dir
+/home/richard/projects/Ci224/src/CMakeFiles/VoxelGame.dir

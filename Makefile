@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = src
+CMAKE_SOURCE_DIR = /home/richard/projects/Ci224
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = Ci224
+CMAKE_BINARY_DIR = /home/richard/projects/Ci224
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start CMakeFiles CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/richard/projects/Ci224/CMakeFiles /home/richard/projects/Ci224/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/richard/projects/Ci224/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,152 +111,8 @@ VoxelGame: cmake_check_build_system
 
 # fast build rule for target.
 VoxelGame/fast:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/build
+	$(MAKE) -f src/CMakeFiles/VoxelGame.dir/build.make src/CMakeFiles/VoxelGame.dir/build
 .PHONY : VoxelGame/fast
-
-Camera.o: Camera.cpp.o
-.PHONY : Camera.o
-
-# target to build an object file
-Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Camera.cpp.o
-.PHONY : Camera.cpp.o
-
-Camera.i: Camera.cpp.i
-.PHONY : Camera.i
-
-# target to preprocess a source file
-Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Camera.cpp.i
-.PHONY : Camera.cpp.i
-
-Camera.s: Camera.cpp.s
-.PHONY : Camera.s
-
-# target to generate assembly for a file
-Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Camera.cpp.s
-.PHONY : Camera.cpp.s
-
-Time.o: Time.cpp.o
-.PHONY : Time.o
-
-# target to build an object file
-Time.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Time.cpp.o
-.PHONY : Time.cpp.o
-
-Time.i: Time.cpp.i
-.PHONY : Time.i
-
-# target to preprocess a source file
-Time.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Time.cpp.i
-.PHONY : Time.cpp.i
-
-Time.s: Time.cpp.s
-.PHONY : Time.s
-
-# target to generate assembly for a file
-Time.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/Time.cpp.s
-.PHONY : Time.cpp.s
-
-game.o: game.cpp.o
-.PHONY : game.o
-
-# target to build an object file
-game.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/game.cpp.o
-.PHONY : game.cpp.o
-
-game.i: game.cpp.i
-.PHONY : game.i
-
-# target to preprocess a source file
-game.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/game.cpp.i
-.PHONY : game.cpp.i
-
-game.s: game.cpp.s
-.PHONY : game.s
-
-# target to generate assembly for a file
-game.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/game.cpp.s
-.PHONY : game.cpp.s
-
-imageLoader.o: imageLoader.cpp.o
-.PHONY : imageLoader.o
-
-# target to build an object file
-imageLoader.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/imageLoader.cpp.o
-.PHONY : imageLoader.cpp.o
-
-imageLoader.i: imageLoader.cpp.i
-.PHONY : imageLoader.i
-
-# target to preprocess a source file
-imageLoader.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/imageLoader.cpp.i
-.PHONY : imageLoader.cpp.i
-
-imageLoader.s: imageLoader.cpp.s
-.PHONY : imageLoader.s
-
-# target to generate assembly for a file
-imageLoader.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/imageLoader.cpp.s
-.PHONY : imageLoader.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-shader.o: shader.cpp.o
-.PHONY : shader.o
-
-# target to build an object file
-shader.cpp.o:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/shader.cpp.o
-.PHONY : shader.cpp.o
-
-shader.i: shader.cpp.i
-.PHONY : shader.i
-
-# target to preprocess a source file
-shader.cpp.i:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/shader.cpp.i
-.PHONY : shader.cpp.i
-
-shader.s: shader.cpp.s
-.PHONY : shader.s
-
-# target to generate assembly for a file
-shader.cpp.s:
-	$(MAKE) -f CMakeFiles/VoxelGame.dir/build.make CMakeFiles/VoxelGame.dir/shader.cpp.s
-.PHONY : shader.cpp.s
 
 # Help Target
 help:
@@ -264,27 +120,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... VoxelGame"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Camera.o"
-	@echo "... Camera.i"
-	@echo "... Camera.s"
-	@echo "... Time.o"
-	@echo "... Time.i"
-	@echo "... Time.s"
-	@echo "... game.o"
-	@echo "... game.i"
-	@echo "... game.s"
-	@echo "... imageLoader.o"
-	@echo "... imageLoader.i"
-	@echo "... imageLoader.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... shader.o"
-	@echo "... shader.i"
-	@echo "... shader.s"
+	@echo "... VoxelGame"
 .PHONY : help
 
 

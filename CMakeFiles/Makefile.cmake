@@ -10,6 +10,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
+  "CMakeLists.txt"
   "src/CMakeLists.txt"
   "/usr/share/cmake-2.8/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
@@ -34,8 +35,6 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/CMakeTestCCompiler.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeTestCXXCompiler.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeTestCompilerCommon.cmake"
-  "/usr/share/cmake-2.8/Modules/CMakeUnixFindMake.cmake"
-  "/usr/share/cmake-2.8/Modules/CheckFunctionExists.c"
   "/usr/share/cmake-2.8/Modules/CheckFunctionExists.cmake"
   "/usr/share/cmake-2.8/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-C.cmake"
@@ -70,9 +69,10 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/VoxelGame.dir/DependInfo.cmake"
+  "src/CMakeFiles/VoxelGame.dir/DependInfo.cmake"
   )
