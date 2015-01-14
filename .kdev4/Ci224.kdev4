@@ -8,11 +8,11 @@ ProjectRootRelative=./
 
 [CMake][CMake Build Directory 0]
 Build Directory Path=file:///home/richard/projects/Ci224/build
-Build Type=
+Build Type=CMAKE_CXX_FLAGS
 CMake Binary=file:///usr/bin/cmake
 Environment Profile=
 Extra Arguments=
-Install Directory=
+Install Directory=file:///usr/local
 
 [Project]
 VersionControlSupport=kdevgit
